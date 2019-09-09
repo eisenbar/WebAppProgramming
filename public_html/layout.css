@@ -1,0 +1,9 @@
+#container {
+    background: lightblue;
+}
+section {
+    border: solid 2px black;
+    border-radius: 8px;
+    margin: 4px;
+    padding: 8px;
+}
