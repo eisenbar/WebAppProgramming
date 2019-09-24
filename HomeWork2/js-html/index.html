@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DOM Manipulation in JS by {Replace this with your name}</title>
+    <link rel="stylesheet" href="instructorstyle.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>JavaScript, HTML, and DOM</h1>
+    <div id="nav">
+      <span>Jump to</span>
+      <a href="#part01">Part 1</a>
+      <a href="#part02">Part 2</a>
+      <a href="#part03">Part 3</a>
+      <a href="#part04">Part 4</a>
+    </div>
+    <p>
+      This assignment is designed to be self-contained: this page contains the
+      instructions for completing the short problems below, but it also will
+      hold your completed answer inside boxes with rounded corners. When answer
+      is not provided these boxes are display with
+      <span class="incorrect">red border</span>. After your JavaScript code
+      produces the expected answer, the border should turn
+      <span class="correct">green</span>.
+    </p>
+
+    <blockquote class="important">
+      It is important that you:
+      <ul>
+        <li>
+          <b>Do not</b> make any changes to this HTML document (<i
+            >except for linking your personal CSS file for Part&nbsp;2</i
+          >).
+        </li>
+        <li>
+          Write you answers to the following problems by writing
+          <b>JavaScript program/functions</b> in a separate JS file
+          (<code>jsdom.js</code>). You will not write HTML tags/elements to
+          answer these questions, instead you will write JS code to create these
+          elements/nodes and attach them to the DOM tree.
+        </li>
+        <li>
+          Write your JS code inside the sections marked with the following
+          comment lines
+          <pre>
+  /*--- begin answer partXX ---*/
+  /*--- end answer partXX ---*/
+          </pre>
+        </li>
+      </ul>
+    </blockquote>
+
+    <p>
+      As a Java programmer, sometimes you have to look up relevant information
+      from the
+      <a href="https://docs.oracle.com/javase/8/docs/api/">Java Online API</a>
+      page to learn more detailed information on commonly used Java classes such
+      as String, ArrayList, System, Random, Scanner, etc. JavaScript developers
+      have access to equally extensive online documentations. In particular, the
+      JavaScript classes and functions for manipulating HTML documents are
+      collectively known as the
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model"
+        >DOM APIs</a
+      >.
+    </p>
+
+    <p>
+      For this assignment the relevant documentations are the DOM interfaces
+      listed below:
+    </p>
+
+    <ul>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document"
+          >Document</a
+        >, specifically
+        <ul>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById"
+              >Document::getElementById()</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"
+              >Document::querySelector()</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll"
+              >Document::querySelectorAll()</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement"
+              >Document::createElement()</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode"
+              >Document::createTextNode()</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node">Node</a
+        >, specifically:
+        <ul>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild"
+              >Node::appendChild()</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild"
+              >Node::removeChild()</a
+            >
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>
+      At the top of each documentation page, you'll find shortcut links to
+      various subsections. Most of the time you'll want to browse the "Methods"
+      subsection.
+    </p>
+    <div class="screenshot">
+      <img src="Document_WebAPIs.png" width="800" />
+    </div>
+
+    <h2>Sample Code</h2>
+    <p>
+      As a warm-up, the JS file shows a few commented lines to show you a short
+      sample program how to manipulate DOM tree from using JavaScript.
+    </p>
+    <p>Make the following changes to <code>jsdom.js</code></p>
+    <ol>
+      <li>
+        Define a variable <code>myname</code> and initialize it with your full
+        name
+      </li>
+      <li>
+        Uncomment the commented lines for part0 and reload the browser.
+      </li>
+    </ol>
+
+    <h3>(2 pts)</h3>
+    <div id="part00" class="result"></div>
+
+    <h3>Hints</h3>
+    <p>
+      You have access to both the CSS (<code>instructorstyle.css</code>) and JS
+      file (<code>verify.js</code>) which are bundled as part of the assignment
+      package. Refer to these two files for your reference and JS examples.
+    </p>
+
+    <h2>Debugging</h2>
+    <p>
+      This is perhaps the best time to start using the builtin browser debugger
+      explained in class at the beginning of the semester.
+    </p>
+    <ol>
+      <li>Open the browser DevTools</li>
+      <li>
+        Switch to the "Source" tab, the left-side panel should show the list of
+        HTML, CSS, and JS files loaded by your browser.
+      </li>
+      <li>
+        Select <code>jsdom.js</code> to start debugging your JavaScript program.
+        The following screenshot shows Chrome DevTools <b>after</b> a breakpoint
+        is set at line 16 of your program and the page is <b>reloaded</b>.
+        Breakpoints can be added/removed by clicking the line numbers.
+
+        <div class="screenshot">
+          <img src="Debugger.png" width="640" />
+        </div>
+      </li>
+    </ol>
+    <p>There are six important components in the debugger panel</p>
+    <ul>
+      <li>
+        <b>Step Over</b>: Continue to the next line after the current statement
+      </li>
+      <li>
+        <b>Step Into</b> Function: if the next line is a function call, trace
+        the execution inside that function
+      </li>
+      <li>
+        <b>Step Out</b>: Resume the current function and return to its caller
+      </li>
+      <li>
+        The leftmost button (to the left of "Step Over") has dual purposes:
+        <b>Pause</b> or <b>Resume</b> debugging
+      </li>
+      <li>
+        The "Scope" tab where you can inspect all the variables used by your
+        program
+      </li>
+      <li>
+        The "Console" tab (lower right) where all the
+        <code>console.log()</code> output will be displayed.
+      </li>
+    </ul>
+
+    <blockquote>
+      Be sure you are aware that <code>console.log()</code> does not send its
+      output to the browser "canvas", and it is mainly used for "debugging"
+      purposes during development. On a real production release, your JS code
+      should be free of any <code>console.xxx()</code> statements.
+    </blockquote>
+    <h3>Injecting Intentional Bugs</h3>
+    <p>
+      To let you practice using the Debugger, make the following changes in
+      <code>jsdom.js</code> and be sure to keep the DevTools open. (The
+      following instructions assumes you are using Chrome).
+    </p>
+    <ol>
+      <li>
+        Change the spelling of the first call to
+        <code>createTextNode</code> inside the if-statement to
+        <code>createTextNote()</code> then reload the page.
+      </li>
+      <li>
+        Look at the console output (below the list of variables) and inspect the
+        detailed output that gives you hints which line(s) of your JS file is
+        causing the error.
+      </li>
+      <li>Revert your JS code to undo the above bug.</li>
+      <li>
+        Now try injecting a different bug but with additional breakpoints set.
+        Replace <code>zero.appendChild(boldNode)</code> to
+        <code>zero.appendChild(boldNod)</code>
+      </li>
+      <li>
+        Set a <b>breakpoint</b> on the line and also at the if-statement above
+        it. Reload the page. You program should be suspended at the
+        if-statement.
+      </li>
+      <li>
+        Hover your mouse over the the misspelled variable name, and also try to
+        hover your mouse over other variable names. Notice how you can inspect
+        detailed information on each variable.
+      </li>
+      <li>
+        Hit either the "Step Over" or "Resume" button to continue running your
+        program to the next line or next breakpoint.
+      </li>
+      <li>Revert your code to undo the above bug</li>
+    </ol>
+
+    <p>
+      Use the above techniques for debugging your code while completing this
+      assignment (as well as other future ones)
+    </p>
+
+    <h2>(5 pts) Part 1: Display Array as a List</h2>
+    <p>
+      The JS starter file declares an array of strings: <code>atoms</code>. Add
+      necessary JS code to display these atom names in a numbered list.
+    </p>
+    <div id="part01" class="result"></div>
+
+    <h2>(5 pts) Part 2: Display Information in an Object</h2>
+
+    Use the <code>const</code> keyword to declare two objects that describes
+    personal travels. Each object should have the following three
+    properties/keys:
+
+    <table id="travel">
+      <tr>
+        <th>Key/Prop</th>
+        <th>Data Type</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <td><code>destination</code></td>
+        <td>String</td>
+        <td>Name of the place you visited (or want to visit)</td>
+        <td>Orlando, Florida</td>
+      </tr>
+      <tr>
+        <td><code>dateOfVisit</code></td>
+        <td>String</td>
+        <td>When visited</td>
+        <td>March 2017</td>
+      </tr>
+      <tr>
+        <td><code>isAbroad</code></td>
+        <td>boolean</td>
+        <td>Is it domestic or international?</td>
+        <td>false</td>
+      </tr>
+    </table>
+
+    <p>
+      The JS starter file already declare two variables:
+      <code>myDomesticTravel</code> and <code>myInternationalTravel</code>.
+    </p>
+
+    <ol>
+      <li>
+        Make necessary changes to these variable to add the three properties
+        above, but don't change their name
+      </li>
+      <li>
+        For each travel, create a paragraph (&lt;p&gt;) containing a short
+        sentence that includes both the <code>destination</code> and
+        <code>dateOfVisit</code> properties. For example, the sentence in your
+        paragraph may look something like:
+        <blockquote>
+          <p>
+            I had fun this March 2017 spending time with family in Orlando,
+            Florida.
+          </p>
+          <p>
+            My mom is so generous to pay for my air ticket to Orlando, Florida
+            in March 2017.
+          </p>
+        </blockquote>
+      </li>
+      <li>
+        Explore the
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList"
+          >Element::classList</a
+        >
+        property to add a class name ("domestic" or "international") to each of
+        the paragraph created.
+      </li>
+      <li>
+        Create your own CSS file (do not modify
+        <code>instructorstyle.css</code>) to define these two classes, and apply
+        different style of each. Remember to link you
+      </li>
+    </ol>
+    <div id="part02" class="result"></div>
+
+    <h3>(2 pts) Extra credit</h3>
+    Add a new property to your object, <code>photoURL</code> that points either
+    to a local image or a remote image somewhere on the internet. Explore how to
+    use the function
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute"
+      >Element::setAttribute()</a
+    >
+    to set the <code>src</code> attribute to your photo. Show the images in
+    addition to the sentences above.
+
+    <h2>(7 pts) Part 3: Array of objects</h2>
+    <p>
+      In this part, your JS code will be handling an array of objects. The
+      concept is pretty much similar to Java arrays (not Java ArrayList). Let's
+      say you have an array of two items:
+    </p>
+    <pre>
+    const months = [
+      {name: "January", days: 31},    
+      {name: "February", days: 28}
+    ];
+
+    console.log(months[0].name); // Output: January
+    console.log(months[0].days); // Output: 31
+    </pre>
+    <p>
+      Given an array of objects
+      <code>atomObjects</code>,:
+    </p>
+    <ul>
+      <li>
+        Create a numbered list of atom name and its weight. The completed HTML
+        should look approximately like the following (except for randomized
+        order)
+
+        <ol>
+          <li>Aluminum (weight: 26.982)</li>
+          <li>Barium (weight: 137.33)</li>
+          <li><i>...many more...</i></li>
+        </ol>
+      </li>
+      <li>
+        Define two classes in your CSS: "light" and "heavy". Apply the "heavy"
+        class to atoms whose weight is above 150. Apply different text colors to
+        each class:
+        <ul>
+          <li>
+            Use the <a href="http://hslpicker.com">HSL color space</a> to define
+            the colors
+          </li>
+          <li>The two colors should share the same Hue and Saturation</li>
+          <li>
+            The "light" class should use a higher Luminance and the "heavy"
+            class should use a lower luminance. Be sure to use
+            <b>non-zero</b> luminance, otherwise the color turns black.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <b>Extra Credits</b>: Explore how to print the weight to show only one
+        decimal place so the output will look like
+        <ol>
+          <li>Aluminum (weight: 27.0)</li>
+          <li>Barium (weight: 137.3)</li>
+          <li><i>...many more...</i></li>
+        </ol>
+      </li>
+    </ul>
+
+    <div id="part03" class="result"></div>
+
+    <h2>(9 pts) Part 4: Table</h2>
+    <p>
+      Show the atoms in the array <code>atomObjects</code> used in Part 3 in a
+      two-column table.
+    </p>
+    <ul>
+      <li>
+        The table must be constructed using these tags: &lt;table&gt;,
+        &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;. You may also use &lt;thead&lt; and
+        &lt;tbody&gt;
+      </li>
+      <li>
+        The header row of the table should show title texts "Atom" and "Weight"
+      </li>
+      <li>
+        The remaining data rows show the atom name and weight (number only)
+      </li>
+      <li>
+        Apply the same "heavy" and "light" classes from the previous part to
+        table rows holding heavy atom or light atom, respectively. Add necessary
+        CSS definition(s) so rows containing heavy atoms have darker background
+        and lighter atoms have lighter background. Hint: use HSL color space.
+      </li>
+    </ul>
+    <p>
+      The general structure of your table should look like the following (except
+      for styles)
+    </p>
+    <div id="sampleAtomTable">
+      <table>
+        <tr>
+          <th>Atom</th>
+          <th>Weight</th>
+        </tr>
+        <tr>
+          <td>Aluminum</td>
+          <td>26.982</td>
+        </tr>
+        <tr>
+          <td>Oxygen</td>
+          <td>15.999</td>
+        </tr>
+        <tr>
+          <td colspan="2">...more data...</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="part04" class="result"></div>
+
+    <h2>(Extra Credit: 5 pts) Part 5: Grid Layout</h2>
+    <p>
+      Repeat Part 4, but use CSS Grid layout in place of a physical table. This
+      means, your JS code should not generate &lt;table&gt;, &lt;tr&gt;,
+      &lt;th&gt;, &lt;td&gt; elements. Hint:
+      <i
+        >The JS code for this part should be shorter compared to Part 4.
+        However, you have to write more CSS declarations.</i
+      >
+    </p>
+
+    <div id="part05" class="result"></div>
+
+    <script src="jsdom.js"></script>
+    <script src="verify.js"></script>
+
+    <h2>Deliverables</h2>
+    <ul>
+      <li>
+        Upload all the files included the assignment bundle to a publicly
+        accessible web host (EOS or elsewhere)
+      </li>
+      <li>
+        In addition, upload your own personalized CSS file and images (if you
+        use ones)
+      </li>
+    </ul>
+  </body>
+</html>

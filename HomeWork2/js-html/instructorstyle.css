@@ -1,0 +1,119 @@
+body {
+  font-family: "Roboto";
+}
+
+#nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#nav a {
+  margin: 0 1em;
+  border-radius: 0.3em;
+  padding: 0.5em;
+  background: #c0d9f2;
+}
+
+#nav span {
+  color: black;
+}
+
+#nav span {
+  color: black;
+}
+
+.OK {
+  border: 5px solid green;
+  background: white;
+}
+
+.FAIL {
+  border: 5px solid red;
+  background: white;
+}
+
+blockquote {
+  border: 1px dashed gray;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+blockquote.important {
+  background: #ec9393;
+}
+
+span {
+  color: white;
+  padding: 0 0.25em;
+  border-radius: 0.25em;
+}
+
+span.correct {
+  background: green;
+}
+
+span.incorrect {
+  background: red;
+}
+
+.result {
+  border-radius: 0.5em;
+  min-height: 2cm;
+  padding: 1em;
+  font-size: 144%;
+}
+
+.result:empty {
+  border: 5px solid red;
+  background: yellow;
+}
+
+.screenshot {
+  text-align: center;
+}
+
+#part00 b:first-of-type {
+  color: blue;
+}
+
+#part00 b:last-of-type {
+  color: red;
+}
+
+#travel {
+  border: 2px solid gray;
+}
+
+#travel th,
+#travel td {
+  padding: 0.5em;
+}
+
+#travel tr:nth-child(odd) {
+  background: #e0e085;
+}
+
+#travel tr:nth-child(even) {
+  background: #cccc33;
+}
+
+#sampleAtomTable table {
+  border: 1px solid gray;
+  margin: 2em;
+}
+
+#sampleAtomTable table tr:nth-child(odd) {
+  background: lightgray;
+}
+/*# sourceMappingURL=instructorstyle.css.map */

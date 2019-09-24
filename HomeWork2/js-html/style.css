@@ -1,0 +1,20 @@
+.domestic{
+    font-family: fantasy
+}
+.international{
+    font-family: cursive
+}
+
+.light{
+    color: hsla(100, 0%, 70%, 1)
+}
+
+.heavy{
+    color: hsla(100, 0%, 35%, 1)
+}
+table .heavy{
+    background: hsla(100, 0%, 25%, 1)
+}
+table .light{
+    background: hsla(100, 0%, 60%, 1)
+}
