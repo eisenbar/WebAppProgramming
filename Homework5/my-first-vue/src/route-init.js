@@ -14,7 +14,7 @@ const AppRouter = new VueRouter({
     routes: routeTable, 
     mode: "history",
     base: process.env.NODE_ENV === "production"
-    ? "/~eisenbar/public_html/WebApp/WebAppProgramming/homework5/myvuefirebase/"
+    ? "/~eisenbar/WebApp/WebAppProgramming/Homework5/my-first-vue/"
     : "/"
     });
 export { AppRouter };

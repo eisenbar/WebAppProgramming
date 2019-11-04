@@ -5,6 +5,6 @@ module.exports = {
 
   publicPath:
     process.env.NODE_ENV === "production"
-      ? "/~eisenbar/public_html/WebApp/WebAppProgramming/homework5/myvuefirebase/"
+      ? "/~eisenbar/WebApp/WebAppProgramming/Homework5/my-first-vue/"
       : "/"
 }

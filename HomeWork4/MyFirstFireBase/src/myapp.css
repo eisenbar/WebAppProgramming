@@ -1,0 +1,18 @@
+body {
+    min-height: 100vh;
+}
+
+table tr:nth-child(even){
+    background: rgb(180, 175, 168)
+}
+table tr:nth-child(odd){
+    background: rgb(243, 242, 241)
+}
+
+.form{
+    border: 1px solid black;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}

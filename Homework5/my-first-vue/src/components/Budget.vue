@@ -29,7 +29,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3">Total: </td>
+                    <td colspan="4">Total: </td>
                     <td>{{ parseFloat(totalExpense).toFixed(2) }}</td>
                 </tr>
             </tbody>
@@ -69,7 +69,7 @@
                 this.myExpense.push({ ...item, mykey: snapshot.key });
 
                 // accumulate the total
-                this.totalExpense += item.amount;
+                this.totalExpense += parseFloat(item.amount);
             },
 
             fbRemoveListener(snapshot) {
